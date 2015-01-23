@@ -25,6 +25,17 @@ def transfer(s):
 
     print newstring
 
+# the following code is implemented by pimgeek
+# str_modify is a fuction
+# input description:
+# 1. s is string - for example: "border-bottom-color", "a-b", "a"
+# 2. m is a number -  for example: 0, 1, 2
+# 3. elem is the char to-be-replaced, for example "" "A".lower(), "a".upper()
+# 
+# output description, by example:
+# str_modify("abc", 1, "B") ==> "aBc"
+# str_modify("abc-def", 3, "#") ==> "abc#def"
+
 def str_modify(s,m,elem):
     charlst = list(s)
     charlst[m] = elem
