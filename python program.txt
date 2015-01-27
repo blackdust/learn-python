@@ -1,0 +1,45 @@
+#!/usr/bin/python
+#~
+def transfer(s):
+    length=len(s)
+    n=1
+
+    newstring=" " * (length + 2)
+    s = s + "  "
+
+    # newstring[0]=s[0].upper
+    newstring=str_modify(newstring, 0, s[0].upper())
+
+    while length - n>0:
+        if s[n]=="-":
+            # newstring[n]=""
+            newstring=str_modify(newstring, n, "")
+
+            # newstring[n+1]=s[n+1].upper
+            newstring=str_modify(newstring, n+1, s[n+1].upper())
+            n=n+2
+        else:
+            # newstring[n]=s[n].lower
+            newstring=str_modify(newstring, n, s[n].lower())
+            n=n+1
+
+    print newstring
+
+# the following code is implemented by pimgeek
+# str_modify is a fuction
+# input description:
+# 1. s is string - for example: "border-bottom-color", "a-b", "a"
+# 2. m is a number -  for example: 0, 1, 2
+# 3. elem is the char to-be-replaced, for example "" "A".lower(), "a".upper()
+# 
+# output description, by example:
+# str_modify("abc", 1, "B") ==> "aBc"
+# str_modify("abc-def", 3, "#") ==> "abc#def"
+
+def str_modify(s,m,elem):
+    charlst = list(s)
+    charlst[m] = elem
+    return "".join(charlst)
+
+# expected output = BorderBottomColor
+transfer("border-bottom-color")
