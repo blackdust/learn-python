@@ -250,41 +250,41 @@ filled_dict = {"one": 1, "two": 2, "three": 3}
 filled_dict["one"]   # => 1                filled_dict["one"]   指代1
 
 # Get all keys as a list with "keys()"
-filled_dict.keys()   # => ["three", "two", "one"]
+filled_dict.keys()   # => ["three", "two", "one"]         #返回字典里第一项 但是不保证顺序
 # Note - Dictionary key ordering is not guaranteed.
 # Your results might not match this exactly.
 
-# Get all values as a list with "values()"
-filled_dict.values()   # => [3, 2, 1]
+# Get all values as a list with "values()"           
+filled_dict.values()   # => [3, 2, 1]返回键的值  顺序等同于key（）键的顺序
 # Note - Same as above regarding key ordering.
 
 # Check for existence of keys in a dictionary with "in"
-"one" in filled_dict   # => True
+"one" in filled_dict   # => True        用in去检验里面的元素
 1 in filled_dict   # => False
 
 # Looking up a non-existing key is a KeyError
-filled_dict["four"]   # KeyError
+filled_dict["four"]   # KeyError 表示键是找不到的
 
 # Use "get()" method to avoid the KeyError
 filled_dict.get("one")   # => 1
 filled_dict.get("four")   # => None
-# The get method supports a default argument when the value is missing
+# The get method supports a default argument when the value is missing      get用于得到值 支持默认参数的代表的值丢失
 filled_dict.get("one", 4)   # => 1
-filled_dict.get("four", 4)   # => 4
-# note that filled_dict.get("four") is still => None
+filled_dict.get("four", 4)   # => 4 不理解
+# note that filled_dict.get("four") is still => None 
 # (get doesn't set the value in the dictionary)
 
 # set the value of a key with a syntax similar to lists
-filled_dict["four"] = 4  # now, filled_dict["four"] => 4
+filled_dict["four"] = 4  # now, filled_dict["four"] => 4    可以对键后代表的值赋值
 
 # "setdefault()" inserts into a dictionary only if the given key isn't present
 filled_dict.setdefault("five", 5)  # filled_dict["five"] is set to 5
-filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5
+filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5       这个方法可以插入一个键和值
 
 
-# Sets store ... well sets (which are like lists but can contain no duplicates)
+# Sets store ... well sets (which are like lists but can contain no duplicates)  set是一种数据类型 集合
 empty_set = set()
-# Initialize a "set()" with a bunch of values
+# Initialize a "set()" with a bunch of values                             只显现不重复的元素
 some_set = set([1, 2, 2, 3, 4])   # some_set is now set([1, 2, 3, 4])
 
 # order is not guaranteed, even though it may sometimes look sorted
@@ -293,18 +293,18 @@ another_set = set([4, 3, 2, 2, 1])  # another_set is now set([1, 2, 3, 4])
 # Since Python 2.7, {} can be used to declare a set
 filled_set = {1, 2, 2, 3, 4}   # => {1, 2, 3, 4}
 
-# Add more items to a set
+# Add more items to a set           集合里插入5
 filled_set.add(5)   # filled_set is now {1, 2, 3, 4, 5}
 
 # Do set intersection with &
 other_set = {3, 4, 5, 6}
-filled_set & other_set   # => {3, 4, 5}
+filled_set & other_set   # => {3, 4, 5}算出同时属于两个集合的元素  
 
 # Do set union with |
 filled_set | other_set   # => {1, 2, 3, 4, 5, 6}
 
-# Do set difference with -
-{1, 2, 3, 4} - {2, 3, 5}   # => {1, 4}
+# Do set difference with -                           集合里减去元素
+{1, 2, 3, 4} - {2, 3, 5}   # => {1, 4}    
 
 # Check for existence in a set with in
 2 in filled_set   # => True
@@ -335,12 +335,19 @@ prints:
     cat is a mammal
     mouse is a mammal
 """
+
+
+
+
 for animal in ["dog", "cat", "mouse"]:
-    # You can use % to interpolate formatted strings
-    print("%s is a mammal" % animal)
+    # You can use % to interpolate formatted strings    for后的变量赋值 分别被赋值为之后那个列表的
+    print("%s is a mammal" % animal)                    可以用%指代
+
+
+
 
 """
-"range(number)" returns a list of numbers
+"range(number)" returns a list of numbers   range（4）=[0,1,2,3]
 from zero to the given number
 prints:
     0
@@ -348,8 +355,13 @@ prints:
     2
     3
 """
+
+
 for i in range(4):
     print(i)
+
+
+
 
 """
 While loops go until a condition is no longer met.
@@ -364,7 +376,17 @@ while x < 4:
     print(x)
     x += 1  # Shorthand for x = x + 1
 
-# Handle exceptions with a try/except block
+
+
+
+
+
+
+
+
+
+
+# Handle exceptions with a try/except block 异常处理
 
 # Works on Python 2.6 and up:
 try:
@@ -377,46 +399,58 @@ except (TypeError, NameError):
 else:   # Optional clause to the try/except block. Must follow all except blocks
     print "All good!"   # Runs only if the code in try raises no exceptions
 
+"""
+try:
+<语句>        #运行别的代码
+except <名字>：
+<语句>        #如果在try部份引发了'name'异常
+except <名字>，<数据>:
+<语句>        #如果引发了'name'异常，获得附加的数据
+else:
+<语句>        #如果没有异常发生
+"""
 
+
+
+#需要补充一点：Python中函数是可以返回多个值的，如果返回多个值，会将多个值放在一个元组或者其他类型的集合中来返回
 ####################################################
 ## 4. Functions
 ####################################################
 
-# Use "def" to create new functions
+# Use "def" to create new functions建立函数
 def add(x, y):
     print("x is %s and y is %s" % (x, y))
     return x + y    # Return values with a return statement
 
-# Calling functions with parameters
+# Calling functions with parameters调用函数
 add(5, 6)   # => prints out "x is 5 and y is 6" and returns 11
 
-# Another way to call functions is with keyword arguments
+# Another way to call functions is with keyword arguments        要是实参有和形参一样的变量的赋值 ，可以匹配
 add(y=6, x=5)   # Keyword arguments can arrive in any order.
 
 
 # You can define functions that take a variable number of
-# positional args, which will be interpreted as a tuple if you do not use the *
+# positional args, which will be interpreted as a tuple if you do not use the *  星号后面可以跟多个参数
 def varargs(*args):
     return args
 
-varargs(1, 2, 3)   # => (1, 2, 3)
+varargs(1, 2, 3)   # => (1, 2, 3)        #用*生成了元组
+
+
 
 
 # You can define functions that take a variable number of
 # keyword args, as well, which will be interpreted as a map if you do not use **
 def keyword_args(**kwargs):
     return kwargs
-
 # Let's call it to see what happens
-keyword_args(big="foot", loch="ness")   # => {"big": "foot", "loch": "ness"}
-
-
+keyword_args(big="foot", loch="ness")   # =>       用**生成了一个字典   {"big": "foot", "loch": "ness"}
 # You can do both at once, if you like
 def all_the_args(*args, **kwargs):
     print(args)
     print(kwargs)
 """
-all_the_args(1, 2, a=3, b=4) prints:
+all_the_args(1, 2, a=3, b=4) prints:               #即生成了元组又生成了字典
     (1, 2)
     {"a": 3, "b": 4}
 """
@@ -436,7 +470,8 @@ def pass_all_the_args(*args, **kwargs):
     print varargs(*args)
     print keyword_args(**kwargs)
 
-# Function Scope                                                                
+
+# Function Scope   成员变量和全局变量                                                               
 x = 5
 
 def setX(num):
@@ -458,14 +493,16 @@ def create_adder(x):
     def adder(y):
         return x + y
     return adder
-
 add_10 = create_adder(10)
 add_10(3)   # => 13
+##并不理解
 
+
+lambda语句中，冒号前是参数，可以有多个，用逗号隔开，冒号右边的返回值。lambda语句构建的其实是一个函数对象
 # There are also anonymous functions
 (lambda x: x > 2)(3)   # => True
 
-# There are built-in higher order functions
+# There are built-in higher order functions          map语句和filter语句
 map(add_10, [1, 2, 3])   # => [11, 12, 13]
 filter(lambda x: x > 5, [3, 4, 5, 6, 7])   # => [6, 7]
 
@@ -531,20 +568,20 @@ Human.grunt()   # => "*grunt*"
 ## 6. Modules
 ####################################################
 
-# You can import modules
+# You can import modules                        import模块（类） 调用一个类
 import math
 print(math.sqrt(16))  # => 4
 
-# You can get specific functions from a module
+# You can get specific functions from a module  专门调用一些方法
 from math import ceil, floor
 print(ceil(3.7))  # => 4.0
 print(floor(3.7))   # => 3.0
 
-# You can import all functions from a module.
+# You can import all functions from a module.   调用全部方法
 # Warning: this is not recommended
 from math import *
 
-# You can shorten module names
+# You can shorten module names                 调用时候改变名称
 import math as m
 math.sqrt(16) == m.sqrt(16)   # => True
 # you can also test that the functions are equivalent
