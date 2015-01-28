@@ -4,7 +4,8 @@
     using three "s, and are often used    
     as comments
 """
-#¶àÐÐ×¢ÊÍ
+#å¤šè¡Œæ³¨é‡Š [èµžåŒ]
+
 ####################################################
 ## 1. Primitive Datatypes and Operators
 ####################################################
@@ -17,95 +18,127 @@
 8 - 1  # => 7
 10 * 2  # => 20
 35 / 5  # => 7
-#ËÄÔòÔËËã
+#å››åˆ™è¿ç®— [èµžåŒ]
+
 # Division is a bit tricky. It is integer division and floors the results
 # automatically.
-5 / 2  # => 2                
-#¼´Ê¹³ý²»¾¡Ò²ÎªÕûÊý
+5 / 2  # => 2
+#å³ä½¿é™¤ä¸å°½ä¹Ÿä¸ºæ•´æ•° [èµžåŒï¼Œæœ‰è¡¥å……]
+# å®žé™…ä¸Šæ˜¯ 5 / 2 = 2.5 ç„¶åŽå‘ä¸‹å–æ•´ï¼Œå¾—åˆ° 2ã€‚ï¼ˆå¦‚æžœæ˜¯å‘ä¸Šå–æ•´å°±ä¼šå¾—åˆ° 3ï¼‰
+
 # To fix division we need to learn about floats.
 2.0     # This is a float
 11.0 / 4.0  # => 2.75 ahhh...much better
-#Ð¡Êý³ýÒÔÐ¡ÊýÎÞ·¨³ý¾¡»áÒ»Ö±ÓÃÐ¡Êý
+#å°æ•°é™¤ä»¥å°æ•°æ— æ³•é™¤å°½ä¼šä¸€ç›´ç”¨å°æ•° [èµžåŒï¼Œæœ‰è¡¥å……]
+# ä¸¤ä¸ªæ•°å­—ä¸­æœ‰ä¸€ä¸ªæ˜¯å°æ•°ï¼Œç»“æžœå°±æ˜¯å°æ•°ï¼Œæ¯”å¦‚ 5 / 2.0 = 2.5
+
 # Result of integer division truncated down both for positive and negative. 
 5 // 3     # => 1
 5.0 // 3.0 # => 1.0 # works on floats too
 -5 // 3  # => -2
 -5.0 // 3.0 # => -2.0
-#Ë«Ð±¸ÜÎªÕû³ý£¬³ý²»¾¡Ð¡ÊýÎ»»á±ä³É0 Õû³ýÊ±ºò»áÏòÏÂÈ¡Õû
+#åŒæ–œæ ä¸ºæ•´é™¤ï¼Œé™¤ä¸å°½å°æ•°ä½ä¼šå˜æˆ0 æ•´é™¤æ—¶å€™ä¼šå‘ä¸‹å–æ•´ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# å‚è€ƒé“¾æŽ¥ -  http://stackoverflow.com/questions/183853/in-python-what-is-the-difference-between-and-when-used-for-division#
+
 # Modulo operation
 7 % 3 # => 1
-#È¡Óà
+#å–ä½™ [èµžåŒ]
+
 # Exponentiation (x to the yth power)
 2**4 # => 16
-#2µÄËÄ´Î·½
+#2çš„å››æ¬¡æ–¹ [èµžåŒ]
+
 # Enforce precedence with parentheses
 (1 + 3) * 2  # => 8
-#À¨ºÅÓÅÏÈ¼¶
+#æ‹¬å·ä¼˜å…ˆçº§ [èµžåŒ]
+
 # Boolean Operators
 # Note "and" and "or" are case-sensitive
 True and False #=> False
 False or True #=> True
-#ÕæºÍ¼ÙÎª¼Ù  ¼Ù»òÕæÎªÕæ
+#çœŸå’Œå‡ä¸ºå‡  å‡æˆ–çœŸä¸ºçœŸ [èµžåŒ]
+
 # Note using Bool operators with ints
 0 and 2 #=> 0
 -5 or 0 #=> -5             
-0 == False #=> True         Êý×Ö0´ú±í¼Ù
-2 == True #=> False         2²»´ú±íÕæÒ²²»´ú±í¼Ù
-1 == True #=> True          1´ú±íÕæ
+0 == False #=> True         æ•°å­—0ä»£è¡¨å‡ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+2 == True #=> False         2ä¸ä»£è¡¨çœŸä¹Ÿä¸ä»£è¡¨å‡ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+1 == True #=> True          1ä»£è¡¨çœŸ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# å‚è€ƒé“¾æŽ¥ - http://stackoverflow.com/questions/5119709/true-and-false-in-python
+# å¯ä»¥è¯·å®‹äº®ç»™å‡ºè®²è§£
 
 # negate with not
 not True  # => False
 not False  # => True
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # Equality is ==
 1 == 1  # => True
 2 == 1  # => False
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # Inequality is !=
 1 != 1  # => False
 2 != 1  # => True
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # More comparisons
 1 < 10  # => True
 1 > 10  # => False
 2 <= 2  # => True
 2 >= 2  # => True
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # Comparisons can be chained!
 1 < 2 < 3  # => True
 2 < 3 < 2  # => False
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # Strings are created with " or '
 "This is a string."
 'This is also a string.'
-#Á½ÖÖ¶¼ÊÇºÏ·¨µÄ
+#ä¸¤ç§éƒ½æ˜¯åˆæ³•çš„ [èµžåŒ]
+
 # Strings can be added too!
 "Hello " + "world!"  # => "Hello world!"
-#×Ö·û´®µÄÁ¬½Ó²Ù×÷
+#å­—ç¬¦ä¸²çš„è¿žæŽ¥æ“ä½œ [èµžåŒ]
+
 # ... or multiplied
 "Hello" * 3  # => "HelloHelloHello"
-#¸´ÖÆÈý´ÎHello×Ö·û´®
+#å¤åˆ¶ä¸‰æ¬¡Helloå­—ç¬¦ä¸² [èµžåŒï¼Œæœ‰è¡¥å……]
+# å¤åˆ¶ä¸‰ä»½ Hello å­—ç¬¦ä¸²ï¼Œå¹¶æŠŠå®ƒä»¬è¿žæŽ¥åœ¨ä¸€èµ·
 
 # A string can be treated like a list of characters
 "This is a string"[0]  # => 'T'
-#×Ö·û´®µÄÎ»ÖÃ0ÊÇT
+#å­—ç¬¦ä¸²çš„ä½ç½®0æ˜¯T [èµžåŒ]
+
 # % can be used to format strings, like this:
 "%s can be %s" % ("strings", "interpolated")
-#%s¿ÉÒÔÖ¸´ú×Ö·û´®
+#%så¯ä»¥æŒ‡ä»£å­—ç¬¦ä¸² [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# ç”¨ " %s %s " % (x, y) è¿™ç§è¯­æ³•ï¼Œ
+# å¯ä»¥ä»¥ x æ›¿æ¢ " %s %s " å­—ç¬¦ä¸²ä¸­çš„ç¬¬ä¸€ä¸ª %sï¼Œx å¯ä»¥æ˜¯å„ç§ç±»åž‹çš„å˜é‡ï¼Œä¸é™äºŽå­—ç¬¦ä¸²ç±»åž‹
+# å¹¶ä¸”ä»¥ y æ›¿æ¢ " %s %s " å­—ç¬¦ä¸²ä¸­çš„ç¬¬äºŒä¸ª %sï¼Œy å¯ä»¥æ˜¯å„ç§ç±»åž‹çš„å˜é‡ï¼Œä¸é™äºŽå­—ç¬¦ä¸²ç±»åž‹
+
 # A newer way to format strings is the format method.
 # This method is the preferred way
 "{0} can be {1}".format("strings", "formatted")
+# è¯·ä»”ç»†æè¿°ä¸Šè¿°è¯­å¥ç©¶ç«Ÿå®žçŽ°äº†ä»€ä¹ˆæ•ˆæžœã€‚
+
 # You can use keywords if you don't want to count.
 "{name} wants to eat {food}".format(name="Bob", food="lasagna")
-#{}ÄÚ×Ö·û¿ÉÒÔÌæ»»
+#{}å†…å­—ç¬¦å¯ä»¥æ›¿æ¢ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# è¯·ä»”ç»†æè¿°ä¸Šè¿°è¯­å¥ç©¶ç«Ÿæ˜¯ä»¥ä»€ä¹ˆæ›¿æ¢äº†ä»€ä¹ˆï¼Ÿ
+
 # None is an object
 None  # => None
+# æ˜¯å¦ç†è§£ â€œNone æ˜¯ä¸€ä¸ªå¯¹è±¡â€ è¿™å¥è¯ï¼Ÿ[å¯ä»¥è¯·å®‹äº®ç»™å‡ºè®²è§£]
 
 # Don't use the equality "==" symbol to compare objects to None
 # Use "is" instead
 "etc" is None  # => False
 None is None  # => True
-#ÓÃisÈ¥±È½ÏNone¶ÔÏó
+#ç”¨isåŽ»æ¯”è¾ƒNoneå¯¹è±¡ [å¯ä»¥è¯·å®‹äº®ç»™å‡ºè®²è§£]
+
 # The 'is' operator tests for object identity. This isn't
 # very useful when dealing with primitive values, but is
 # very useful when dealing with objects.
@@ -114,7 +147,7 @@ None is None  # => True
 # All other values are True
 bool(0)  # => False
 bool("")  # => False
-#None£¬0£¬ºÍ¿Õ×Ö·û´®/ÁÐ±íÆÀ¹ÀÎªfalse ÆäËûµÄÊÇÕæµÄ
+#Noneï¼Œ0ï¼Œå’Œç©ºå­—ç¬¦ä¸²/åˆ—è¡¨è¯„ä¼°ä¸ºfalse å…¶ä»–çš„æ˜¯çœŸçš„
 
 ####################################################
 ## 2. Variables and Collections
@@ -122,169 +155,173 @@ bool("")  # => False
 
 # Python has a print statement, in all 2.x versions but removed from 3.
 print "I'm Python. Nice to meet you!"
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿéœ€è¦æ˜Žç¡® print statement ä¸Ž print function çš„åŒºåˆ«ã€‚
+
 # Python also has a print function, available in versions 2.7 and 3...
-# but for 2.7 you need to add the import (uncommented):     2.7°æ±¾µ÷ÓÃ
+# but for 2.7 you need to add the import (uncommented):     2.7ç‰ˆæœ¬è°ƒç”¨
 # from __future__ import print_function
 print("I'm also Python! ")
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
 
 # No need to declare variables before assigning to them.
 some_var = 5    # Convention is to use lower_case_with_underscores
 some_var  # => 5
-#pythonÀïÃæÊ¹ÓÃ±äÁ¿Ç°²»ÐèÒªÉùÃ÷
+#pythoné‡Œé¢ä½¿ç”¨å˜é‡å‰ä¸éœ€è¦å£°æ˜Ž [èµžåŒ]
 
-
-
-
-
-
-
-# Accessing a previously unassigned variable is an exception.  ·ÃÎÊÒ»¸öÒÔÇ°Î´·ÖÅäµÄ±äÁ¿ÊÇÀýÍâ
-# See Control Flow to learn more about exception handling.     ¿´¿ØÖÆÁ÷È¥ÁË½â¸ü¶àµÄÒì³£´¦Àí
+# Accessing a previously unassigned variable is an exception.  è®¿é—®ä¸€ä¸ªä»¥å‰æœªåˆ†é…çš„å˜é‡æ˜¯ä¾‹å¤–
+# See Control Flow to learn more about exception handling.     çœ‹æŽ§åˆ¶æµåŽ»äº†è§£æ›´å¤šçš„å¼‚å¸¸å¤„ç†
 some_other_var  # Raises a name error
 
 # if can be used as an expression
-"yahoo!" if 3 > 2 else 2  # => "yahoo!"                       ÒÉ»ó£º Õâ¶Î´úÂë²»ÖªËùÔÆ
-
-
-
-
-
-
-
-
-
-
+"yahoo!" if 3 > 2 else 2  # => "yahoo!"                       ç–‘æƒ‘ï¼š è¿™æ®µä»£ç ä¸çŸ¥æ‰€äº‘
+# [å¯ä»¥è¯·å®‹äº®ç»™å‡ºè®²è§£]
 
 # Lists store sequences
 li = []
 # You can start with a prefilled list
 other_li = [4, 5, 6]
-# ½¨Á¢Ò»¸öÁÐ±í
+# å»ºç«‹ä¸€ä¸ªåˆ—è¡¨ [èµžåŒ]
+
 # Add stuff to the end of a list with append
 li.append(1)    # li is now [1]
 li.append(2)    # li is now [1, 2]
 li.append(4)    # li is now [1, 2, 4]
-li.append(3)    # li is now [1, 2, 4, 3]       ÍùµÚÒ»Ïî¼ÓÊý¾Ý
+li.append(3)    # li is now [1, 2, 4, 3]       å¾€ç¬¬ä¸€é¡¹åŠ æ•°æ® [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# li æœ€åˆæ˜¯ä¸€ä¸ªç©ºç™½çš„åˆ—è¡¨ï¼Œappend åšçš„åŠ¨ä½œï¼Œä¸æ˜¯å¾€ç¬¬ä¸€é¡¹é‡ŒåŠ æ•°æ®ï¼Œ
+# è€Œæ˜¯ä¸æ–­åœ¨å½“å‰åˆ—è¡¨çš„åŸºç¡€ä¸Šï¼Œè¿½åŠ ä¸€é¡¹æ•°æ®ã€‚
+
 # Remove from the end with pop
-li.pop()        # => 3 and li is now [1, 2, 4] É¾³ý×îºóÒ»Ïî
+li.pop()        # => 3 and li is now [1, 2, 4] åˆ é™¤æœ€åŽä¸€é¡¹ [èµžåŒ]
+
 # Let's put it back
 li.append(3)    # li is now [1, 2, 4, 3] again.
+# å¯ä»¥çœ‹å‡º pop ä¸Ž append ä¸¤ä¸ªå‡½æ•°ï¼Œéƒ½æ˜¯å¯¹åˆ—è¡¨çš„æœ«ç«¯åšå¤„ç†ã€‚
 
 # Access a list like you would any array
 li[0]  # => 1
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ è®¿é—®åˆ—è¡¨ä¸­çš„å…ƒç´ 
+
 # Assign new values to indexes that have already been initialized with =
 li[0] = 42
-li[0]  # => 42       ÁÐ±íÊÇ¿ÉÒÔÍùÆäÖÐÒ»Ïî¸Ä±äÔªËØ
+li[0]  # => 42       åˆ—è¡¨æ˜¯å¯ä»¥å¾€å…¶ä¸­ä¸€é¡¹æ”¹å˜å…ƒç´  [èµžåŒ]
+
 li[0] = 1  # Note: setting it back to the original value
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿè¯•ç€å†™å‡ºæ¥æ›´å¥½ã€‚
+
 # Look at the last element
-li[-1]  # => 3 0ÍùÇ°ÊÇ´ÓÁÐ±íÀïÄæÏòÀ´±íÊ¾ÔªËØ
+li[-1]  # => 3 0å¾€å‰æ˜¯ä»Žåˆ—è¡¨é‡Œé€†å‘æ¥è¡¨ç¤ºå…ƒç´  [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# -1 æ˜¯ä»Žåˆ—è¡¨çš„æœ«ç«¯å–å…ƒç´ ï¼Œè€Œä¸” -1,-2,-3 åˆ†åˆ«å–å¾—å€’æ•°ç¬¬ä¸€ï¼Œå€’æ•°ç¬¬äºŒï¼Œå€’æ•°ç¬¬ä¸‰ä¸ªå…ƒç´ 
 
 # Looking out of bounds is an IndexError
-li[4]  # Raises an IndexError    ÔÚË÷ÒýÍâÃæ·ÃÎÊ»á²úÉú´íÎó
+li[4]  # Raises an IndexError    åœ¨ç´¢å¼•å¤–é¢è®¿é—®ä¼šäº§ç”Ÿé”™è¯¯ [è¿™ä¸ªç†è§£éœ€è¦è°ƒæ•´]
+# ç´¢å¼•å¤–é¢æ˜¯æŒ‡ä»€ä¹ˆçš„å¤–é¢ï¼Œè¿™ä¸ªè¯´æ³•è¿˜ä¸å¤Ÿæ¸…æ™°ã€‚
 
 # You can look at ranges with slice syntax.
 # (It's a closed/open range for you mathy types.)
-li[1:3]  # => [2, 4]  ¶þÎ»¿ªÊ¼µ½µÚËÄÎ»Ç° 2 3
+li[1:3]  # => [2, 4]  äºŒä½å¼€å§‹åˆ°ç¬¬å››ä½å‰ 2 3 [èµžåŒ]
+
 # Omit the beginning
-li[2:]  # => [4, 3]   µÚÈýÎ»¿ªÊ¼µ½½áÊø  3 4
+li[2:]  # => [4, 3]   ç¬¬ä¸‰ä½å¼€å§‹åˆ°ç»“æŸ  3 4 [èµžåŒ]
+
 # Omit the end
-li[:3]  # => [1, 2, 4] ´ÓµÚ1Ò»Î»¿ªÊ¼µ½µÚËÄÎ»Ç°
-
-
-
+li[:3]  # => [1, 2, 4] ä»Žç¬¬1ä¸€ä½å¼€å§‹åˆ°ç¬¬å››ä½å‰ [èµžåŒ]
 
 # Select every second entry
-li[::2]   # =>[1, 4]          ·ÖÆ¬ºóÈ¡µÚ¶þ¸öÔªËØ
-# Revert the list
-li[::-1]   # => [3, 4, 2, 1]  ÊÇ°Ñ±í·´¹ýÀ´ 1243
+li[::2]   # =>[1, 4]          åˆ†ç‰‡åŽå–ç¬¬äºŒä¸ªå…ƒç´ 
 
+# Revert the list
+li[::-1]   # => [3, 4, 2, 1]  æ˜¯æŠŠè¡¨åè¿‡æ¥ 1243
 
 # Use any combination of these to make advanced slices
-# li[start:end:step]                                  ÒÉ»ó£º³£¼ûµÄÒ»°ã¶¼ÊÇ¡¾start£ºend¡¿  stepÊÇÊ²Ã´ÒâË¼
+# li[start:end:step]   ç–‘æƒ‘ï¼šå¸¸è§çš„ä¸€èˆ¬éƒ½æ˜¯ã€startï¼šendã€‘  stepæ˜¯ä»€ä¹ˆæ„æ€ 
+# å¯ä»¥è¯·å®‹äº®ç»™å‡ºè®²è§£
 
-
-
-
-# Remove arbitrary elements from a list with "del" É¾³ýÁÐ±íÀïÔªËØ
+# Remove arbitrary elements from a list with "del" åˆ é™¤åˆ—è¡¨é‡Œå…ƒç´ 
 del li[2]   # li is now [1, 2, 3]
+# åˆ é™¤çš„æ˜¯å“ªä¸ªä½ç½®çš„å…ƒç´ ï¼Ÿ
 
 # You can add lists
 li + other_li   # => [1, 2, 3, 4, 5, 6]
-# Note: values for li and for other_li are not modified. Á´½ÓÁ½¸ö±í Á½¸ö±í±¾Éí²»»á±ä
+# Note: values for li and for other_li are not modified. é“¾æŽ¥ä¸¤ä¸ªè¡¨ ä¸¤ä¸ªè¡¨æœ¬èº«ä¸ä¼šå˜ [èµžåŒ]
    
-# Concatenate lists with "extend()"                      Ê¹µÃli±íÌí¼ÓÁ¬½Ó £¬±¾Éí¸Ä±ä
+# Concatenate lists with "extend()"                      ä½¿å¾—liè¡¨æ·»åŠ è¿žæŽ¥ ï¼Œæœ¬èº«æ”¹å˜ [èµžåŒ]
+
 li.extend(other_li)   # Now li is [1, 2, 3, 4, 5, 6]      
 
-# Check for existence in a list with "in"                ¼ì²é±íÄÚº¬ÓÐÔªËØ
+# Check for existence in a list with "in"                æ£€æŸ¥è¡¨å†…å«æœ‰å…ƒç´  [èµžåŒ]
 1 in li   # => True
 
-# Examine the length with "len()"                        ¼ì²é³¤¶È
+# Examine the length with "len()"                        æ£€æŸ¥é•¿åº¦ [èµžåŒ]
 len(li)   # => 6
 
-
-# Tuples are like lists but are immutable.                Ôª×éÏñÊÇÁÐ±í µ«ÊÇÊÇ²»¿É±äµÄ £¨£©
+# Tuples are like lists but are immutable.                å…ƒç»„åƒæ˜¯åˆ—è¡¨ ä½†æ˜¯æ˜¯ä¸å¯å˜çš„ ï¼ˆï¼‰ [èµžåŒ]
 tup = (1, 2, 3)
 tup[0]   # => 1
-tup[0] = 3  # Raises a TypeError                           ²»¿É¸³Öµ
+tup[0] = 3  # Raises a TypeError                           ä¸å¯èµ‹å€¼ [èµžåŒ]
 
-# You can do all those list thingies on tuples too         Çó³¤¶È ·ÃÎÊÒ»¶Î ÑéÖ¤ÆäÖÐµÄÔªËØ
+# You can do all those list thingies on tuples too         æ±‚é•¿åº¦ è®¿é—®ä¸€æ®µ éªŒè¯å…¶ä¸­çš„å…ƒç´  [èµžåŒï¼Œæœ‰è¡¥å……]
+# è¿˜æœ‰è¿žæŽ¥çš„æ“ä½œ
 len(tup)   # => 3                                           
 tup + (4, 5, 6)   # => (1, 2, 3, 4, 5, 6)
 tup[:2]   # => (1, 2)
 2 in tup   # => True
 
 # You can unpack tuples (or lists) into variables
-a, b, c = (1, 2, 3)     # a is now 1, b is now 2 and c is now 3   Ê¹µÃÒ»Ð©±äÁ¿±»ÔªËØ¸³Öµ
+a, b, c = (1, 2, 3)     # a is now 1, b is now 2 and c is now 3   ä½¿å¾—ä¸€äº›å˜é‡è¢«å…ƒç´ èµ‹å€¼
+
 # Tuples are created by default if you leave out the parentheses
 d, e, f = 4, 5, 6
+# è¿™é‡Œä¸ºä½•æ²¡æœ‰å†™ï¼Ÿ
+
 # Now look how easy it is to swap two values
-e, d = d, e     # d is now 5 and e is now 4                                  ½»»»
+e, d = d, e     # d is now 5 and e is now 4                                  äº¤æ¢ [èµžåŒï¼Œæœ‰è¡¥å……]
+# è¦å†™æ˜Žæ˜¯ä¸¤ä¸ªå˜é‡çš„å–å€¼å‘¼å”¤ï¼Œè¿™ä¸ªæ¯” C è¯­è¨€ä¸­çš„äº’æ¢å†™æ³•æ›´ç®€å•
 
-
-# Dictionaries store mappings                                          ×ÖµäµÄ´æ´¢
+# Dictionaries store mappings                                          å­—å…¸çš„å­˜å‚¨ [èµžåŒï¼Œæœ‰è¡¥å……]
+# å¦‚æžœè¿˜ä¸ç†Ÿæ‚‰å­—å…¸ç±»åž‹ï¼Œè¯·ä¸“é—¨ç†Ÿæ‚‰ä¸€ä¸‹ã€‚
 empty_dict = {}
 # Here is a prefilled dictionary                                  
 filled_dict = {"one": 1, "two": 2, "three": 3}
 
 # Look up values with []
-filled_dict["one"]   # => 1                filled_dict["one"]   Ö¸´ú1
+filled_dict["one"]   # => 1                filled_dict["one"]   æŒ‡ä»£1 [èµžåŒï¼Œæœ‰è¡¥å……]
+# å­—å…¸çš„å¼•ç”¨æ–¹æ³•ï¼Œæˆ–è€…è¯´åªè¦ç»™å‡ºä¸€ä¸ªæœ‰æ•ˆçš„ key ï¼Œå°±å¯ä»¥èŽ·å¾—å¯¹åº”äºŽè¿™ä¸ª key çš„ value
 
 # Get all keys as a list with "keys()"
-filled_dict.keys()   # => ["three", "two", "one"]         #·µ»Ø×ÖµäÀïµÚÒ»Ïî µ«ÊÇ²»±£Ö¤Ë³Ðò
+filled_dict.keys()   # => ["three", "two", "one"]
 # Note - Dictionary key ordering is not guaranteed.
 # Your results might not match this exactly.
 
-# Get all values as a list with "values()"           
-filled_dict.values()   # => [3, 2, 1]·µ»Ø¼üµÄÖµ  Ë³ÐòµÈÍ¬ÓÚkey£¨£©¼üµÄË³Ðò
+# Get all values as a list with "values()"
+filled_dict.values()   # => [3, 2, 1]
 # Note - Same as above regarding key ordering.
 
 # Check for existence of keys in a dictionary with "in"
-"one" in filled_dict   # => True        ÓÃinÈ¥¼ìÑéÀïÃæµÄÔªËØ
+"one" in filled_dict   # => True
 1 in filled_dict   # => False
 
 # Looking up a non-existing key is a KeyError
-filled_dict["four"]   # KeyError ±íÊ¾¼üÊÇÕÒ²»µ½µÄ
+filled_dict["four"]   # KeyError
 
 # Use "get()" method to avoid the KeyError
 filled_dict.get("one")   # => 1
 filled_dict.get("four")   # => None
-# The get method supports a default argument when the value is missing      getÓÃÓÚµÃµ½Öµ Ö§³ÖÄ¬ÈÏ²ÎÊýµÄ´ú±íµÄÖµ¶ªÊ§
+# The get method supports a default argument when the value is missing
 filled_dict.get("one", 4)   # => 1
-filled_dict.get("four", 4)   # => 4 ²»Àí½â
-# note that filled_dict.get("four") is still => None 
+filled_dict.get("four", 4)   # => 4
+# note that filled_dict.get("four") is still => None
 # (get doesn't set the value in the dictionary)
 
 # set the value of a key with a syntax similar to lists
-filled_dict["four"] = 4  # now, filled_dict["four"] => 4    ¿ÉÒÔ¶Ô¼üºó´ú±íµÄÖµ¸³Öµ
+filled_dict["four"] = 4  # now, filled_dict["four"] => 4
 
 # "setdefault()" inserts into a dictionary only if the given key isn't present
 filled_dict.setdefault("five", 5)  # filled_dict["five"] is set to 5
-filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5       Õâ¸ö·½·¨¿ÉÒÔ²åÈëÒ»¸ö¼üºÍÖµ
+filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5
 
-
-# Sets store ... well sets (which are like lists but can contain no duplicates)  setÊÇÒ»ÖÖÊý¾ÝÀàÐÍ ¼¯ºÏ
+# Sets store ... well sets (which are like lists but can contain no duplicates)
 empty_set = set()
-# Initialize a "set()" with a bunch of values                             Ö»ÏÔÏÖ²»ÖØ¸´µÄÔªËØ
+# Initialize a "set()" with a bunch of values
 some_set = set([1, 2, 2, 3, 4])   # some_set is now set([1, 2, 3, 4])
 
 # order is not guaranteed, even though it may sometimes look sorted
@@ -293,18 +330,18 @@ another_set = set([4, 3, 2, 2, 1])  # another_set is now set([1, 2, 3, 4])
 # Since Python 2.7, {} can be used to declare a set
 filled_set = {1, 2, 2, 3, 4}   # => {1, 2, 3, 4}
 
-# Add more items to a set           ¼¯ºÏÀï²åÈë5
+# Add more items to a set
 filled_set.add(5)   # filled_set is now {1, 2, 3, 4, 5}
 
 # Do set intersection with &
 other_set = {3, 4, 5, 6}
-filled_set & other_set   # => {3, 4, 5}Ëã³öÍ¬Ê±ÊôÓÚÁ½¸ö¼¯ºÏµÄÔªËØ  
+filled_set & other_set   # => {3, 4, 5}
 
 # Do set union with |
 filled_set | other_set   # => {1, 2, 3, 4, 5, 6}
 
-# Do set difference with -                           ¼¯ºÏÀï¼õÈ¥ÔªËØ
-{1, 2, 3, 4} - {2, 3, 5}   # => {1, 4}    
+# Do set difference with -
+{1, 2, 3, 4} - {2, 3, 5}   # => {1, 4}
 
 # Check for existence in a set with in
 2 in filled_set   # => True
@@ -327,7 +364,6 @@ elif some_var < 10:    # This elif clause is optional.
 else:           # This is optional too.
     print("some_var is indeed 10.")
 
-
 """
 For loops iterate over lists
 prints:
@@ -335,19 +371,12 @@ prints:
     cat is a mammal
     mouse is a mammal
 """
-
-
-
-
 for animal in ["dog", "cat", "mouse"]:
-    # You can use % to interpolate formatted strings    forºóµÄ±äÁ¿¸³Öµ ·Ö±ð±»¸³ÖµÎªÖ®ºóÄÇ¸öÁÐ±íµÄ
-    print("%s is a mammal" % animal)                    ¿ÉÒÔÓÃ%Ö¸´ú
-
-
-
+    # You can use % to interpolate formatted strings
+    print("%s is a mammal" % animal)
 
 """
-"range(number)" returns a list of numbers   range£¨4£©=[0,1,2,3]
+"range(number)" returns a list of numbers
 from zero to the given number
 prints:
     0
@@ -355,13 +384,8 @@ prints:
     2
     3
 """
-
-
 for i in range(4):
     print(i)
-
-
-
 
 """
 While loops go until a condition is no longer met.
@@ -376,17 +400,7 @@ while x < 4:
     print(x)
     x += 1  # Shorthand for x = x + 1
 
-
-
-
-
-
-
-
-
-
-
-# Handle exceptions with a try/except block Òì³£´¦Àí
+# Handle exceptions with a try/except block
 
 # Works on Python 2.6 and up:
 try:
@@ -399,58 +413,42 @@ except (TypeError, NameError):
 else:   # Optional clause to the try/except block. Must follow all except blocks
     print "All good!"   # Runs only if the code in try raises no exceptions
 
-"""
-try:
-<Óï¾ä>        #ÔËÐÐ±ðµÄ´úÂë
-except <Ãû×Ö>£º
-<Óï¾ä>        #Èç¹ûÔÚtry²¿·ÝÒý·¢ÁË'name'Òì³£
-except <Ãû×Ö>£¬<Êý¾Ý>:
-<Óï¾ä>        #Èç¹ûÒý·¢ÁË'name'Òì³££¬»ñµÃ¸½¼ÓµÄÊý¾Ý
-else:
-<Óï¾ä>        #Èç¹ûÃ»ÓÐÒì³£·¢Éú
-"""
-
-
-
-#ÐèÒª²¹³äÒ»µã£ºPythonÖÐº¯ÊýÊÇ¿ÉÒÔ·µ»Ø¶à¸öÖµµÄ£¬Èç¹û·µ»Ø¶à¸öÖµ£¬»á½«¶à¸öÖµ·ÅÔÚÒ»¸öÔª×é»òÕßÆäËûÀàÐÍµÄ¼¯ºÏÖÐÀ´·µ»Ø
 ####################################################
 ## 4. Functions
 ####################################################
 
-# Use "def" to create new functions½¨Á¢º¯Êý
+# Use "def" to create new functions
 def add(x, y):
     print("x is %s and y is %s" % (x, y))
     return x + y    # Return values with a return statement
 
-# Calling functions with parametersµ÷ÓÃº¯Êý
+# Calling functions with parameters
 add(5, 6)   # => prints out "x is 5 and y is 6" and returns 11
 
-# Another way to call functions is with keyword arguments        ÒªÊÇÊµ²ÎÓÐºÍÐÎ²ÎÒ»ÑùµÄ±äÁ¿µÄ¸³Öµ £¬¿ÉÒÔÆ¥Åä
+# Another way to call functions is with keyword arguments
 add(y=6, x=5)   # Keyword arguments can arrive in any order.
 
-
 # You can define functions that take a variable number of
-# positional args, which will be interpreted as a tuple if you do not use the *  ÐÇºÅºóÃæ¿ÉÒÔ¸ú¶à¸ö²ÎÊý
+# positional args, which will be interpreted as a tuple if you do not use the *
 def varargs(*args):
     return args
 
-varargs(1, 2, 3)   # => (1, 2, 3)        #ÓÃ*Éú³ÉÁËÔª×é
-
-
-
+varargs(1, 2, 3)   # => (1, 2, 3)
 
 # You can define functions that take a variable number of
 # keyword args, as well, which will be interpreted as a map if you do not use **
 def keyword_args(**kwargs):
     return kwargs
+
 # Let's call it to see what happens
-keyword_args(big="foot", loch="ness")   # =>       ÓÃ**Éú³ÉÁËÒ»¸ö×Öµä   {"big": "foot", "loch": "ness"}
+keyword_args(big="foot", loch="ness")   # => {"big": "foot", "loch": "ness"}
+
 # You can do both at once, if you like
 def all_the_args(*args, **kwargs):
     print(args)
     print(kwargs)
 """
-all_the_args(1, 2, a=3, b=4) prints:               #¼´Éú³ÉÁËÔª×éÓÖÉú³ÉÁË×Öµä
+all_the_args(1, 2, a=3, b=4) prints:
     (1, 2)
     {"a": 3, "b": 4}
 """
@@ -470,8 +468,7 @@ def pass_all_the_args(*args, **kwargs):
     print varargs(*args)
     print keyword_args(**kwargs)
 
-
-# Function Scope   ³ÉÔ±±äÁ¿ºÍÈ«¾Ö±äÁ¿                                                               
+# Function Scope                                                                
 x = 5
 
 def setX(num):
@@ -493,23 +490,20 @@ def create_adder(x):
     def adder(y):
         return x + y
     return adder
+
 add_10 = create_adder(10)
 add_10(3)   # => 13
-##²¢²»Àí½â
 
-
-lambdaÓï¾äÖÐ£¬Ã°ºÅÇ°ÊÇ²ÎÊý£¬¿ÉÒÔÓÐ¶à¸ö£¬ÓÃ¶ººÅ¸ô¿ª£¬Ã°ºÅÓÒ±ßµÄ·µ»ØÖµ¡£lambdaÓï¾ä¹¹½¨µÄÆäÊµÊÇÒ»¸öº¯Êý¶ÔÏó
 # There are also anonymous functions
 (lambda x: x > 2)(3)   # => True
 
-# There are built-in higher order functions          mapÓï¾äºÍfilterÓï¾ä
+# There are built-in higher order functions
 map(add_10, [1, 2, 3])   # => [11, 12, 13]
 filter(lambda x: x > 5, [3, 4, 5, 6, 7])   # => [6, 7]
 
 # We can use list comprehensions for nice maps and filters
 [add_10(i) for i in [1, 2, 3]]  # => [11, 12, 13]
 [x for x in [3, 4, 5, 6, 7] if x > 5]   # => [6, 7]
-
 
 ####################################################
 ## 5. Classes
@@ -544,7 +538,6 @@ class Human(object):
     def grunt():
         return "*grunt*"
 
-
 # Instantiate a class
 i = Human(name="Ian")
 print(i.say("hi"))     # prints out "Ian: hi"
@@ -563,25 +556,24 @@ j.get_species()   # => "H. neanderthalensis"
 # Call the static method
 Human.grunt()   # => "*grunt*"
 
-
 ####################################################
 ## 6. Modules
 ####################################################
 
-# You can import modules                        importÄ£¿é£¨Àà£© µ÷ÓÃÒ»¸öÀà
+# You can import modules
 import math
 print(math.sqrt(16))  # => 4
 
-# You can get specific functions from a module  ×¨ÃÅµ÷ÓÃÒ»Ð©·½·¨
+# You can get specific functions from a module
 from math import ceil, floor
 print(ceil(3.7))  # => 4.0
 print(floor(3.7))   # => 3.0
 
-# You can import all functions from a module.   µ÷ÓÃÈ«²¿·½·¨
+# You can import all functions from a module.
 # Warning: this is not recommended
 from math import *
 
-# You can shorten module names                 µ÷ÓÃÊ±ºò¸Ä±äÃû³Æ
+# You can shorten module names
 import math as m
 math.sqrt(16) == m.sqrt(16)   # => True
 # you can also test that the functions are equivalent
@@ -596,7 +588,6 @@ math.sqrt == m.sqrt == sqrt  # => True
 # defines a module.
 import math
 dir(math)
-
 
 ####################################################
 ## 7. Advanced
@@ -625,13 +616,11 @@ for i in double_numbers(xrange_):
     if i >= 30:
         break
 
-
 # Decorators
 # in this example beg wraps say
 # Beg will call say. If say_please is True then it will change the returned
 # message
 from functools import wraps
-
 
 def beg(target_function):
     @wraps(target_function)
@@ -643,12 +632,10 @@ def beg(target_function):
 
     return wrapper
 
-
 @beg
 def say(say_please=False):
     msg = "Can you buy me a beer?"
     return msg, say_please
-
 
 print(say())  # Can you buy me a beer?
 print(say(say_please=True))  # Can you buy me a beer? Please! I am poor :(
