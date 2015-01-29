@@ -1,4 +1,4 @@
-# Single line comments start with a number symbol.
+﻿# Single line comments start with a number symbol.
 
 """ Multiline strings can be written
     using three "s, and are often used    
@@ -29,7 +29,7 @@
 # To fix division we need to learn about floats.
 2.0     # This is a float
 11.0 / 4.0  # => 2.75 ahhh...much better
-#小数除以小数无法除尽会一直用小数 [赞同，有补充]
+#小数除以小数无法除尽会一直用小数 最多保持到15位[赞同，有补充]
 # 两个数字中有一个是小数，结果就是小数，比如 5 / 2.0 = 2.5
 
 # Result of integer division truncated down both for positive and negative. 
@@ -37,7 +37,7 @@
 5.0 // 3.0 # => 1.0 # works on floats too
 -5 // 3  # => -2
 -5.0 // 3.0 # => -2.0
-#双斜杠为整除，除不尽小数位会变成0 整除时候会向下取整 [这个理解需要调整]
+#双斜杠为整除，要是分子或者分母存在一个小数即使除不尽小数位会变成。0 整除时候会向下取整 单斜杠会给出真实的浮点 [这个理解需要调整]
 # 参考链接 -  http://stackoverflow.com/questions/183853/in-python-what-is-the-difference-between-and-when-used-for-division#
 
 # Modulo operation
@@ -59,8 +59,7 @@ False or True #=> True
 #真和假为假  假或真为真 [赞同]
 
 # Note using Bool operators with ints
-0 and 2 #=> 0
--5 or 0 #=> -5             
+           
 0 == False #=> True         数字0代表假 [这个理解需要调整]
 2 == True #=> False         2不代表真也不代表假 [这个理解需要调整]
 1 == True #=> True          1代表真 [这个理解需要调整]
@@ -70,30 +69,27 @@ False or True #=> True
 # negate with not
 not True  # => False
 not False  # => True
-# 这里为何没有写？
+# not为取反
 
 # Equality is ==
 1 == 1  # => True
 2 == 1  # => False
-# 这里为何没有写？
-
+# ==表示判断是否相等
 # Inequality is !=
 1 != 1  # => False
 2 != 1  # => True
-# 这里为何没有写？
-
+# 判断是否不等
 # More comparisons
 1 < 10  # => True
 1 > 10  # => False
 2 <= 2  # => True
 2 >= 2  # => True
-# 这里为何没有写？
+# 大于小于大于等于小于等于
 
 # Comparisons can be chained!
 1 < 2 < 3  # => True
 2 < 3 < 2  # => False
-# 这里为何没有写？
-
+# 连接的判断符
 # Strings are created with " or '
 "This is a string."
 'This is also a string.'
@@ -122,11 +118,11 @@ not False  # => True
 # A newer way to format strings is the format method.
 # This method is the preferred way
 "{0} can be {1}".format("strings", "formatted")
-# 请仔细描述上述语句究竟实现了什么效果。
+#str.format()函数 是字符串直接可以打点调用的函数 括号里会有 1{0}{1}...2{}{}..3{name}{word}...  等等占位符 在之后的打括号里会进行赋值
 
 # You can use keywords if you don't want to count.
 "{name} wants to eat {food}".format(name="Bob", food="lasagna")
-#{}内字符可以替换 [这个理解需要调整]
+#{}内字符可以替换 大括号内的字符可以在小括号内被赋值
 # 请仔细描述上述语句究竟是以什么替换了什么？
 
 # None is an object
@@ -137,7 +133,7 @@ None  # => None
 # Use "is" instead
 "etc" is None  # => False
 None is None  # => True
-#用is去比较None对象 [可以请宋亮给出讲解]
+#用is去比较None对象 [可以请宋亮给出讲解]  比较类型
 
 # The 'is' operator tests for object identity. This isn't
 # very useful when dealing with primitive values, but is
@@ -156,25 +152,26 @@ bool("")  # => False
 # Python has a print statement, in all 2.x versions but removed from 3.
 print "I'm Python. Nice to meet you!"
 # 这里为何没有写？需要明确 print statement 与 print function 的区别。
-
 # Python also has a print function, available in versions 2.7 and 3...
-# but for 2.7 you need to add the import (uncommented):     2.7版本调用
+# but for 2.7 you need to add the import (uncommented):    
 # from __future__ import print_function
 print("I'm also Python! ")
-# 这里为何没有写？
+#  2.7版本调用from __future__ import print_function 才能使用print  版本3中ishi语句
 
 # No need to declare variables before assigning to them.
 some_var = 5    # Convention is to use lower_case_with_underscores
 some_var  # => 5
 #python里面使用变量前不需要声明 [赞同]
-
 # Accessing a previously unassigned variable is an exception.  访问一个以前未分配的变量是例外
-# See Control Flow to learn more about exception handling.     看控制流去了解更多的异常处理
-some_other_var  # Raises a name error
 
+# See Control Flow to learn more about exception handling.     看控制流去了解更多的异常处理
+some_other_var  # Raises a name error=
 # if can be used as an expression
 "yahoo!" if 3 > 2 else 2  # => "yahoo!"                       疑惑： 这段代码不知所云
 # [可以请宋亮给出讲解]
+
+
+
 
 # Lists store sequences
 li = []
@@ -209,13 +206,13 @@ li[0] = 1  # Note: setting it back to the original value
 # 这里为何没有写？试着写出来更好。
 
 # Look at the last element
-li[-1]  # => 3 0往前是从列表里逆向来表示元素 [这个理解需要调整]
+li[-1]  # => 读取倒数第一个元素[这个理解需要调整]
 # -1 是从列表的末端取元素，而且 -1,-2,-3 分别取得倒数第一，倒数第二，倒数第三个元素
 
 # Looking out of bounds is an IndexError
 li[4]  # Raises an IndexError    在索引外面访问会产生错误 [这个理解需要调整]
-# 索引外面是指什么的外面，这个说法还不够清晰。
-
+# 索引外面是指什么的外面，这个说法还不够清晰。 
+  
 # You can look at ranges with slice syntax.
 # (It's a closed/open range for you mathy types.)
 li[1:3]  # => [2, 4]  二位开始到第四位前 2 3 [赞同]
@@ -233,12 +230,13 @@ li[::2]   # =>[1, 4]          分片后取第二个元素
 li[::-1]   # => [3, 4, 2, 1]  是把表反过来 1243
 
 # Use any combination of these to make advanced slices
-# li[start:end:step]   疑惑：常见的一般都是【start：end】  step是什么意思 
+# li[start:end:step]   疑惑：常见的一般都是【start：end】  step是什么意思  隔n位
 # 可以请宋亮给出讲解
+
 
 # Remove arbitrary elements from a list with "del" 删除列表里元素
 del li[2]   # li is now [1, 2, 3]
-# 删除的是哪个位置的元素？
+# 删除的是哪个位置的元素？ 第三个
 
 # You can add lists
 li + other_li   # => [1, 2, 3, 4, 5, 6]
@@ -258,7 +256,6 @@ len(li)   # => 6
 tup = (1, 2, 3)
 tup[0]   # => 1
 tup[0] = 3  # Raises a TypeError                           不可赋值 [赞同]
-
 # You can do all those list thingies on tuples too         求长度 访问一段 验证其中的元素 [赞同，有补充]
 # 还有连接的操作
 len(tup)   # => 3                                           
@@ -287,63 +284,68 @@ filled_dict = {"one": 1, "two": 2, "three": 3}
 filled_dict["one"]   # => 1                filled_dict["one"]   指代1 [赞同，有补充]
 # 字典的引用方法，或者说只要给出一个有效的 key ，就可以获得对应于这个 key 的 value
 
+
+
+
+1月28号更新：
+
 # Get all keys as a list with "keys()"
 filled_dict.keys()   # => ["three", "two", "one"]
-# Note - Dictionary key ordering is not guaranteed.
+# Note - Dictionary key ordering is not guaranteed. 获得字典的键 但是不保证顺序
 # Your results might not match this exactly.
 
 # Get all values as a list with "values()"
-filled_dict.values()   # => [3, 2, 1]
+filled_dict.values()   # => [3, 2, 1]               获得字典的值 值得顺序和获得字典的键的顺序是一样的
 # Note - Same as above regarding key ordering.
 
-# Check for existence of keys in a dictionary with "in"
+# Check for existence of keys in a dictionary with "in"  用in去验证里面的元素
 "one" in filled_dict   # => True
 1 in filled_dict   # => False
 
-# Looking up a non-existing key is a KeyError
+# Looking up a non-existing key is a KeyError             访问一个没有的键 会显示keyerror
 filled_dict["four"]   # KeyError
 
-# Use "get()" method to avoid the KeyError
+# Use "get()" method to avoid the KeyError                用get方法避免error 当没有那个键时返回none
 filled_dict.get("one")   # => 1
 filled_dict.get("four")   # => None
-# The get method supports a default argument when the value is missing
+# The get method supports a default argument when the value is missing    get用于得到值 支持默认参数当代表的值丢失时
 filled_dict.get("one", 4)   # => 1
 filled_dict.get("four", 4)   # => 4
-# note that filled_dict.get("four") is still => None
+# note that filled_dict.get("four") is still => None                      dict.get(key, default=None) 找不到时候返回default
 # (get doesn't set the value in the dictionary)
 
-# set the value of a key with a syntax similar to lists
+# set the value of a key with a syntax similar to lists                     可以直接赋值一个值
 filled_dict["four"] = 4  # now, filled_dict["four"] => 4
 
-# "setdefault()" inserts into a dictionary only if the given key isn't present
+# "setdefault()" inserts into a dictionary only if the given key isn't present            setdefault方法添加key和值
 filled_dict.setdefault("five", 5)  # filled_dict["five"] is set to 5
 filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5
 
-# Sets store ... well sets (which are like lists but can contain no duplicates)
+# Sets store ... well sets (which are like lists but can contain no duplicates)           set是一种数据类型 无序集合
 empty_set = set()
-# Initialize a "set()" with a bunch of values
+# Initialize a "set()" with a bunch of values                                             不重复元素
 some_set = set([1, 2, 2, 3, 4])   # some_set is now set([1, 2, 3, 4])
 
-# order is not guaranteed, even though it may sometimes look sorted
-another_set = set([4, 3, 2, 2, 1])  # another_set is now set([1, 2, 3, 4])
+# order is not guaranteed, even though it may sometimes look sorted                      无法保证顺序
+another_set = set([4, 3, 2, 2, 1])  # another_set is now set([1, 2, 3, 4])          
 
-# Since Python 2.7, {} can be used to declare a set
+# Since Python 2.7, {} can be used to declare a set                                      2.7里{}是表示和判断set集合的
 filled_set = {1, 2, 2, 3, 4}   # => {1, 2, 3, 4}
 
-# Add more items to a set
-filled_set.add(5)   # filled_set is now {1, 2, 3, 4, 5}
+# Add more items to a set  往set集合里添加元素
+filled_set.add(5)   # filled_set is now {1, 2, 3, 4, 5}                                       
 
-# Do set intersection with &
+# Do set intersection with &             用&找出交集
 other_set = {3, 4, 5, 6}
 filled_set & other_set   # => {3, 4, 5}
 
-# Do set union with |
+# Do set union with |                    |找出并集
 filled_set | other_set   # => {1, 2, 3, 4, 5, 6}
 
-# Do set difference with -
+# Do set difference with -               -是集合的减法
 {1, 2, 3, 4} - {2, 3, 5}   # => {1, 4}
 
-# Check for existence in a set with in
+# Check for existence in a set with in      用in 来判断是否含有元素
 2 in filled_set   # => True
 10 in filled_set   # => False
 
@@ -372,7 +374,7 @@ prints:
     mouse is a mammal
 """
 for animal in ["dog", "cat", "mouse"]:
-    # You can use % to interpolate formatted strings
+    # You can use % to interpolate formatted strings      for后的变量赋值 分别被赋值为之后那个列表的可以用%指代
     print("%s is a mammal" % animal)
 
 """
@@ -400,12 +402,12 @@ while x < 4:
     print(x)
     x += 1  # Shorthand for x = x + 1
 
-# Handle exceptions with a try/except block
+# Handle exceptions with a try/except block  异常处理
 
 # Works on Python 2.6 and up:
 try:
     # Use "raise" to raise an error
-    raise IndexError("This is an index error")
+    raise IndexError("This is an index error")#??????????????????????? 刻意制造异常
 except IndexError as e:
     pass    # Pass is just a no-op. Usually you would do recovery here.
 except (TypeError, NameError):
@@ -413,27 +415,58 @@ except (TypeError, NameError):
 else:   # Optional clause to the try/except block. Must follow all except blocks
     print "All good!"   # Runs only if the code in try raises no exceptions
 
+try:
+<语句>        #运行别的代码
+except <a>：
+<语句>        #如果在try部份引发了'a'异常 执行这个语句
+except <b>，<数据>:
+<语句>        #如果引发了'b'异常，获得附加的数据
+else:
+<语句>        #如果没有异常发生
+"""
+
+
+try-finally 语句无论是否发生异常都将执行最后的代码。
+
+try:
+<语句>
+finally:
+<语句>    #退出try时总会执行
+raise
+
+
+try:
+     s = None
+     if s is None:
+         print "s 是空对象"
+         raise NameError     #如果引发NameError异常，try部分后面的代码将不能执行
+......
+......
+
+
+Python中函数是可以返回多个值的，如果返回多个值，会将多个值放在一个元组或者其他类型的集合中来返回
 ####################################################
 ## 4. Functions
 ####################################################
 
-# Use "def" to create new functions
+# Use "def" to create new functions   def建立函数
 def add(x, y):
     print("x is %s and y is %s" % (x, y))
     return x + y    # Return values with a return statement
 
-# Calling functions with parameters
+# Calling functions with parameters     调用函数
 add(5, 6)   # => prints out "x is 5 and y is 6" and returns 11
 
-# Another way to call functions is with keyword arguments
+# Another way to call functions is with keyword arguments 要是实参有和形参一样的变量的赋值 ，可以匹配
 add(y=6, x=5)   # Keyword arguments can arrive in any order.
 
 # You can define functions that take a variable number of
-# positional args, which will be interpreted as a tuple if you do not use the *
+# positional args, which will be interpreted as a tuple if you do not use the * *  星号后面可以跟多个参数
 def varargs(*args):
     return args
 
-varargs(1, 2, 3)   # => (1, 2, 3)
+varargs(1, 2, 3)   # => (1, 2, 3)                                             
+ #用*生成的参数返回的是元组
 
 # You can define functions that take a variable number of
 # keyword args, as well, which will be interpreted as a map if you do not use **
@@ -441,14 +474,14 @@ def keyword_args(**kwargs):
     return kwargs
 
 # Let's call it to see what happens
-keyword_args(big="foot", loch="ness")   # => {"big": "foot", "loch": "ness"}
+keyword_args(big="foot", loch="ness")   # =>  用**导入了一个字典 {"big": "foot", "loch": "ness"}**对赋值输入比较敏感
 
-# You can do both at once, if you like
+# You can do both at once, if you like 
 def all_the_args(*args, **kwargs):
     print(args)
     print(kwargs)
 """
-all_the_args(1, 2, a=3, b=4) prints:
+all_the_args(1, 2, a=3, b=4) prints:          #即生成了元组又生成了字典
     (1, 2)
     {"a": 3, "b": 4}
 """
@@ -468,7 +501,7 @@ def pass_all_the_args(*args, **kwargs):
     print varargs(*args)
     print keyword_args(**kwargs)
 
-# Function Scope                                                                
+# Function Scope      成员变量和全局变量                                                           
 x = 5
 
 def setX(num):
@@ -485,7 +518,7 @@ def setGlobalX(num):
 setX(43)
 setGlobalX(6)
 
-# Python has first class functions
+# Python has first class functions  python里的函数分级别
 def create_adder(x):
     def adder(y):
         return x + y
@@ -494,10 +527,12 @@ def create_adder(x):
 add_10 = create_adder(10)
 add_10(3)   # => 13
 
+
+lambda语句中，冒号前是参数，可以有多个，用逗号隔开，冒号右边的返回值。lambda语句构建的其实是一个函数对象
 # There are also anonymous functions
 (lambda x: x > 2)(3)   # => True
 
-# There are built-in higher order functions
+# There are built-in higher order functions                            map语句和filter语句的用法
 map(add_10, [1, 2, 3])   # => [11, 12, 13]
 filter(lambda x: x > 5, [3, 4, 5, 6, 7])   # => [6, 7]
 
